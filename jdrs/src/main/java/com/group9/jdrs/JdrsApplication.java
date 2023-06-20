@@ -1,19 +1,17 @@
-package com.group9.rtds;
+package com.group9.jdrs;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.kafka.annotation.EnableKafka;
-import org.springframework.scheduling.annotation.EnableScheduling;
 
 @SpringBootApplication
-@EnableDiscoveryClient
 @EnableKafka
-@EnableScheduling
-public class RtdsApplication {
+@EnableDiscoveryClient
+public class JdrsApplication {
 
 	public static void main(String[] args) {
 
-		SpringApplication.run(RtdsApplication.class, args);
+		SpringApplication.run(JdrsApplication.class, args);
 	}
 }

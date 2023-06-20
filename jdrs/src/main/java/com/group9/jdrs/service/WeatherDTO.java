@@ -14,7 +14,6 @@ public class WeatherDTO {
 	}
 
 	public void setRequest(RequestDTO request) {
-
 		this.request = request;
 	}
 

@@ -9,7 +9,6 @@ public class WeatherDTO {
     private CurrentDTO current;
 
     public RequestDTO getRequest() {
-
         return request;
     }
 

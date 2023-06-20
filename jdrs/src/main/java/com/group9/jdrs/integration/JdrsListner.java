@@ -14,6 +14,6 @@ public class JdrsListner {
 
 	@KafkaListener(topics = "RTDIS_IOWA", groupId = "gid")
 	public void sendWeatherData(WeatherDTO weatherDTO) {
-		System.out.println("Weather " + weatherDTO.toString());
+		System.out.println("Weather " + weatherDTO.getCurrent().getFeelslike());
 	}
 }

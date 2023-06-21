@@ -19,9 +19,10 @@ public class JdrsListner {
 	@Autowired
 	private ObjectMapper objectMapper;
 
-	@KafkaListener(topics = "RTDIS_IOWA", groupId = "group-id")
+	@KafkaListener(topics = "${kafka.topic}")
 	public void receiveWeatherData(String weatherJson) {
 		try {
+			System.out.println("Listener: " + weatherJson);
 			WeatherDTO weatherDTO = objectMapper.readValue(weatherJson, WeatherDTO.class);
 		} catch (JsonMappingException e) {
 			// TODO Auto-generated catch block
@@ -30,6 +31,5 @@ public class JdrsListner {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		System.out.println("Weather Man" + weatherJson);
 	}
 }

@@ -1,0 +1,39 @@
+# Compiled class files
+target/
+
+# IDE-specific files
+.idea/
+.vscode/
+
+# Maven-specific files
+mvnw
+mvnw.cmd
+.mvn/
+
+# Gradle-specific files
+.gradle/
+build/
+
+# Spring Boot generated files
+target/
+bin/
+
+# Log files
+*.log
+logs/
+
+# Application properties files
+src/main/resources/application.properties
+src/main/resources/application.yml
+
+# Other temporary or build-related files
+*.tmp
+*.bak
+*.swp
+*.~lock.*
+*.class
+
+# Package-specific files
+*.jar
+*.war
+*.ear

@@ -20,7 +20,7 @@ public class JdrsListner {
 	private ObjectMapper objectMapper;
 
 	@KafkaListener(topics = "RTDIS_IOWA", groupId = "group-id")
-	public void sendWeatherData(String weatherJson) {
+	public void receiveWeatherData(String weatherJson) {
 		try {
 			WeatherDTO weatherDTO = objectMapper.readValue(weatherJson, WeatherDTO.class);
 		} catch (JsonMappingException e) {

@@ -4,403 +4,434 @@ import java.util.List;
 
 public class WeatherDTO {
 
-	private RequestDTO request;
-	private LocationDTO location;
-	private CurrentDTO current;
+    private RequestDTO request;
+    private LocationDTO location;
+    private CurrentDTO current;
 
-	public RequestDTO getRequest() {
+    public RequestDTO getRequest() {
 
-		return request;
-	}
+        return request;
+    }
 
-	public void setRequest(RequestDTO request) {
 
-		this.request = request;
-	}
+    public void setRequest( RequestDTO request ) {
 
-	public LocationDTO getLocation() {
+        this.request = request;
+    }
 
-		return location;
-	}
 
-	public void setLocation(LocationDTO location) {
+    public LocationDTO getLocation() {
 
-		this.location = location;
-	}
+        return location;
+    }
 
-	public CurrentDTO getCurrent() {
 
-		return current;
-	}
+    public void setLocation( LocationDTO location ) {
 
-	public void setCurrent(CurrentDTO current) {
+        this.location = location;
+    }
 
-		this.current = current;
-	}
 
-	public static class RequestDTO {
+    public CurrentDTO getCurrent() {
 
-		private String type;
-		private String query;
-		private String language;
-		private String unit;
+        return current;
+    }
 
-		// Getters and setters
 
-		public String getType() {
+    public void setCurrent( CurrentDTO current ) {
 
-			return type;
-		}
+        this.current = current;
+    }
 
-		public void setType(String type) {
+    public static class RequestDTO {
 
-			this.type = type;
-		}
+        private String type;
+        private String query;
+        private String language;
+        private String unit;
 
-		public String getQuery() {
+        // Getters and setters
 
-			return query;
-		}
+        public String getType() {
 
-		public void setQuery(String query) {
+            return type;
+        }
 
-			this.query = query;
-		}
 
-		public String getLanguage() {
+        public void setType( String type ) {
 
-			return language;
-		}
+            this.type = type;
+        }
 
-		public void setLanguage(String language) {
 
-			this.language = language;
-		}
+        public String getQuery() {
 
-		public String getUnit() {
+            return query;
+        }
 
-			return unit;
-		}
 
-		public void setUnit(String unit) {
+        public void setQuery( String query ) {
 
-			this.unit = unit;
-		}
+            this.query = query;
+        }
 
-		@Override
-		public String toString() {
-			return "RequestDTO [type=" + type + ", query=" + query + ", language=" + language + ", unit=" + unit + "]";
-		}
 
-	}
+        public String getLanguage() {
 
-	public static class LocationDTO {
+            return language;
+        }
 
-		private String name;
-		private String country;
-		private String region;
-		private String lat;
-		private String lon;
-		private String timezone_id;
-		private String localtime;
-		private long localtime_epoch;
-		private String utc_offset;
 
-		// Getters and setters
+        public void setLanguage( String language ) {
 
-		public String getName() {
+            this.language = language;
+        }
 
-			return name;
-		}
 
-		public void setName(String name) {
+        public String getUnit() {
 
-			this.name = name;
-		}
+            return unit;
+        }
 
-		public String getCountry() {
 
-			return country;
-		}
+        public void setUnit( String unit ) {
 
-		public void setCountry(String country) {
+            this.unit = unit;
+        }
+    }
 
-			this.country = country;
-		}
+    public static class LocationDTO {
 
-		public String getRegion() {
+        private String name;
+        private String country;
+        private String region;
+        private String lat;
+        private String lon;
+        private String timezone_id;
+        private String localtime;
+        private long localtime_epoch;
+        private String utc_offset;
 
-			return region;
-		}
+        // Getters and setters
 
-		public void setRegion(String region) {
+        public String getName() {
 
-			this.region = region;
-		}
+            return name;
+        }
 
-		public String getLat() {
 
-			return lat;
-		}
+        public void setName( String name ) {
 
-		public void setLat(String lat) {
+            this.name = name;
+        }
 
-			this.lat = lat;
-		}
 
-		public String getLon() {
+        public String getCountry() {
 
-			return lon;
-		}
+            return country;
+        }
 
-		public void setLon(String lon) {
 
-			this.lon = lon;
-		}
+        public void setCountry( String country ) {
 
-		public String getTimezone_id() {
+            this.country = country;
+        }
 
-			return timezone_id;
-		}
 
-		public void setTimezone_id(String timezone_id) {
+        public String getRegion() {
 
-			this.timezone_id = timezone_id;
-		}
+            return region;
+        }
 
-		public String getLocaltime() {
 
-			return localtime;
-		}
+        public void setRegion( String region ) {
 
-		public void setLocaltime(String localtime) {
+            this.region = region;
+        }
 
-			this.localtime = localtime;
-		}
 
-		public long getLocaltime_epoch() {
+        public String getLat() {
 
-			return localtime_epoch;
-		}
+            return lat;
+        }
 
-		public void setLocaltime_epoch(long localtime_epoch) {
 
-			this.localtime_epoch = localtime_epoch;
-		}
+        public void setLat( String lat ) {
 
-		public String getUtc_offset() {
+            this.lat = lat;
+        }
 
-			return utc_offset;
-		}
 
-		public void setUtc_offset(String utc_offset) {
+        public String getLon() {
 
-			this.utc_offset = utc_offset;
-		}
+            return lon;
+        }
 
-		@Override
-		public String toString() {
-			return "LocationDTO [name=" + name + ", country=" + country + ", region=" + region + ", lat=" + lat
-					+ ", lon=" + lon + ", timezone_id=" + timezone_id + ", localtime=" + localtime
-					+ ", localtime_epoch=" + localtime_epoch + ", utc_offset=" + utc_offset + "]";
-		}
 
-	}
+        public void setLon( String lon ) {
 
-	public static class CurrentDTO {
+            this.lon = lon;
+        }
 
-		private String observation_time;
-		private int temperature;
-		private int weather_code;
-		private List<String> weather_icons;
-		private List<String> weather_descriptions;
-		private int wind_speed;
-		private int wind_degree;
-		private String wind_dir;
-		private int pressure;
-		private int precip;
-		private int humidity;
-		private int cloudcover;
-		private int feelslike;
-		private int uv_index;
-		private int visibility;
-		private String is_day;
 
-		public String getObservation_time() {
+        public String getTimezone_id() {
 
-			return observation_time;
-		}
+            return timezone_id;
+        }
 
-		public int getTemperature() {
 
-			return temperature;
-		}
+        public void setTimezone_id( String timezone_id ) {
 
-		public int getWeather_code() {
+            this.timezone_id = timezone_id;
+        }
 
-			return weather_code;
-		}
 
-		public List<String> getWeather_icons() {
+        public String getLocaltime() {
 
-			return weather_icons;
-		}
+            return localtime;
+        }
 
-		public List<String> getWeather_descriptions() {
 
-			return weather_descriptions;
-		}
+        public void setLocaltime( String localtime ) {
 
-		public int getWind_speed() {
+            this.localtime = localtime;
+        }
 
-			return wind_speed;
-		}
 
-		public int getWind_degree() {
+        public long getLocaltime_epoch() {
 
-			return wind_degree;
-		}
+            return localtime_epoch;
+        }
 
-		public String getWind_dir() {
 
-			return wind_dir;
-		}
+        public void setLocaltime_epoch( long localtime_epoch ) {
 
-		public int getPressure() {
+            this.localtime_epoch = localtime_epoch;
+        }
 
-			return pressure;
-		}
 
-		public int getPrecip() {
+        public String getUtc_offset() {
 
-			return precip;
-		}
+            return utc_offset;
+        }
 
-		public int getHumidity() {
 
-			return humidity;
-		}
+        public void setUtc_offset( String utc_offset ) {
 
-		public int getCloudcover() {
+            this.utc_offset = utc_offset;
+        }
+    }
 
-			return cloudcover;
-		}
+    public static class CurrentDTO {
 
-		public int getFeelslike() {
+        private String observation_time;
+        private int temperature;
+        private int weather_code;
+        private List<String> weather_icons;
+        private List<String> weather_descriptions;
+        private int wind_speed;
+        private int wind_degree;
+        private String wind_dir;
+        private int pressure;
+        private int precip;
+        private int humidity;
+        private int cloudcover;
+        private int feelslike;
+        private int uv_index;
+        private int visibility;
+        private String is_day;
+       
 
-			return feelslike;
-		}
+        public String getObservation_time() {
 
-		public int getUv_index() {
+            return observation_time;
+        }
 
-			return uv_index;
-		}
 
-		public int getVisibility() {
+        public int getTemperature() {
 
-			return visibility;
-		}
+            return temperature;
+        }
 
-		public String getIs_day() {
 
-			return is_day;
-		}
+        public int getWeather_code() {
 
-		public void setObservation_time(String observation_time) {
+            return weather_code;
+        }
 
-			this.observation_time = observation_time;
-		}
 
-		public void setTemperature(int temperature) {
+        public List<String> getWeather_icons() {
 
-			this.temperature = temperature;
-		}
+            return weather_icons;
+        }
 
-		public void setWeather_code(int weather_code) {
 
-			this.weather_code = weather_code;
-		}
+        public List<String> getWeather_descriptions() {
 
-		public void setWeather_icons(List<String> weather_icons) {
+            return weather_descriptions;
+        }
 
-			this.weather_icons = weather_icons;
-		}
 
-		public void setWeather_descriptions(List<String> weather_descriptions) {
+        public int getWind_speed() {
 
-			this.weather_descriptions = weather_descriptions;
-		}
+            return wind_speed;
+        }
 
-		public void setWind_speed(int wind_speed) {
 
-			this.wind_speed = wind_speed;
-		}
+        public int getWind_degree() {
 
-		public void setWind_degree(int wind_degree) {
+            return wind_degree;
+        }
 
-			this.wind_degree = wind_degree;
-		}
 
-		public void setWind_dir(String wind_dir) {
+        public String getWind_dir() {
 
-			this.wind_dir = wind_dir;
-		}
+            return wind_dir;
+        }
 
-		public void setPressure(int pressure) {
 
-			this.pressure = pressure;
-		}
+        public int getPressure() {
 
-		public void setPrecip(int precip) {
+            return pressure;
+        }
 
-			this.precip = precip;
-		}
 
-		public void setHumidity(int humidity) {
+        public int getPrecip() {
 
-			this.humidity = humidity;
-		}
+            return precip;
+        }
 
-		public void setCloudcover(int cloudcover) {
 
-			this.cloudcover = cloudcover;
-		}
+        public int getHumidity() {
 
-		public void setFeelslike(int feelslike) {
+            return humidity;
+        }
 
-			this.feelslike = feelslike;
-		}
 
-		public void setUv_index(int uv_index) {
+        public int getCloudcover() {
 
-			this.uv_index = uv_index;
-		}
+            return cloudcover;
+        }
 
-		public void setVisibility(int visibility) {
 
-			this.visibility = visibility;
-		}
+        public int getFeelslike() {
 
-		public void setIs_day(String is_day) {
+            return feelslike;
+        }
 
-			this.is_day = is_day;
-		}
 
-		@Override
-		public String toString() {
-			return "CurrentDTO [observation_time=" + observation_time + ", temperature=" + temperature
-					+ ", weather_code=" + weather_code + ", weather_icons=" + weather_icons + ", weather_descriptions="
-					+ weather_descriptions + ", wind_speed=" + wind_speed + ", wind_degree=" + wind_degree
-					+ ", wind_dir=" + wind_dir + ", pressure=" + pressure + ", precip=" + precip + ", humidity="
-					+ humidity + ", cloudcover=" + cloudcover + ", feelslike=" + feelslike + ", uv_index=" + uv_index
-					+ ", visibility=" + visibility + ", is_day=" + is_day + "]";
-		}
+        public int getUv_index() {
 
-	}
+            return uv_index;
+        }
 
-	@Override
-	public String toString() {
-		return "WeatherDTO [request=" + request + ", location=" + location + ", current=" + current + "]";
-	}
 
+        public int getVisibility() {
+
+            return visibility;
+        }
+
+
+        public String getIs_day() {
+
+            return is_day;
+        }
+
+
+        public void setObservation_time( String observation_time ) {
+
+            this.observation_time = observation_time;
+        }
+
+
+        public void setTemperature( int temperature ) {
+
+            this.temperature = temperature;
+        }
+
+
+        public void setWeather_code( int weather_code ) {
+
+            this.weather_code = weather_code;
+        }
+
+
+        public void setWeather_icons( List<String> weather_icons ) {
+
+            this.weather_icons = weather_icons;
+        }
+
+
+        public void setWeather_descriptions( List<String> weather_descriptions ) {
+
+            this.weather_descriptions = weather_descriptions;
+        }
+
+
+        public void setWind_speed( int wind_speed ) {
+
+            this.wind_speed = wind_speed;
+        }
+
+
+        public void setWind_degree( int wind_degree ) {
+
+            this.wind_degree = wind_degree;
+        }
+
+
+        public void setWind_dir( String wind_dir ) {
+
+            this.wind_dir = wind_dir;
+        }
+
+
+        public void setPressure( int pressure ) {
+
+            this.pressure = pressure;
+        }
+
+
+        public void setPrecip( int precip ) {
+
+            this.precip = precip;
+        }
+
+
+        public void setHumidity( int humidity ) {
+
+            this.humidity = humidity;
+        }
+
+
+        public void setCloudcover( int cloudcover ) {
+
+            this.cloudcover = cloudcover;
+        }
+
+
+        public void setFeelslike( int feelslike ) {
+
+            this.feelslike = feelslike;
+        }
+
+
+        public void setUv_index( int uv_index ) {
+
+            this.uv_index = uv_index;
+        }
+
+
+        public void setVisibility( int visibility ) {
+
+            this.visibility = visibility;
+        }
+
+
+        public void setIs_day( String is_day ) {
+
+            this.is_day = is_day;
+        }
+
+    }
 }

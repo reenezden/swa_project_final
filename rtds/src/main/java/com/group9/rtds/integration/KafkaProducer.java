@@ -5,16 +5,20 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.group9.rtds.service.WeatherDTO;
-
 
 @Service
 public class KafkaProducer {
 
-	private KafkaTemplate<String, WeatherDTO> kafkaTemplate;
+	private KafkaTemplate<String, String> kafkaTemplate;
 
 	@Autowired
-	public KafkaProducer(KafkaTemplate<String, WeatherDTO> kafkaTemplate) {
+	private ObjectMapper objectMapper;
+
+	@Autowired
+	public KafkaProducer(KafkaTemplate<String, String> kafkaTemplate) {
 
 		this.kafkaTemplate = kafkaTemplate;
 	}
@@ -24,6 +28,14 @@ public class KafkaProducer {
 
 	public void sendWeatherData(WeatherDTO weatherDTO) {
 
-		kafkaTemplate.send(topic, weatherDTO);
+		try {
+			System.out.println("Temp: " + weatherDTO.getCurrent().getTemperature());
+			String weatherJson = objectMapper.writeValueAsString(weatherDTO);
+			System.out.println("Json" + weatherJson);
+			kafkaTemplate.send(topic, weatherJson);
+		} catch (JsonProcessingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }

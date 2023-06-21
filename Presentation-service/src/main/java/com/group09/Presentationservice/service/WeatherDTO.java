@@ -4,18 +4,16 @@ import java.util.List;
 
 public class WeatherDTO {
 
-	private RequestDTO request;
+
 	private LocationDTO location;
 	private CurrentDTO current;
 
-	public RequestDTO getRequest() {
-
-		return request;
+	public WeatherDTO() {
 	}
 
-	public void setRequest(RequestDTO request) {
-
-		this.request = request;
+	public WeatherDTO(LocationDTO location, CurrentDTO current) {
+		this.location = location;
+		this.current = current;
 	}
 
 	public LocationDTO getLocation() {
@@ -38,61 +36,6 @@ public class WeatherDTO {
 		this.current = current;
 	}
 
-	public static class RequestDTO {
-
-		private String type;
-		private String query;
-		private String language;
-		private String unit;
-
-		// Getters and setters
-
-		public String getType() {
-
-			return type;
-		}
-
-		public void setType(String type) {
-
-			this.type = type;
-		}
-
-		public String getQuery() {
-
-			return query;
-		}
-
-		public void setQuery(String query) {
-
-			this.query = query;
-		}
-
-		public String getLanguage() {
-
-			return language;
-		}
-
-		public void setLanguage(String language) {
-
-			this.language = language;
-		}
-
-		public String getUnit() {
-
-			return unit;
-		}
-
-		public void setUnit(String unit) {
-
-			this.unit = unit;
-		}
-
-		@Override
-		public String toString() {
-			return "RequestDTO [type=" + type + ", query=" + query + ", language=" + language + ", unit=" + unit + "]";
-		}
-
-	}
 
 	public static class LocationDTO {
 
@@ -105,6 +48,21 @@ public class WeatherDTO {
 		private String localtime;
 		private long localtime_epoch;
 		private String utc_offset;
+
+		public LocationDTO() {
+		}
+
+		public LocationDTO(String name, String country, String region, String lat, String lon, String timezone_id, String localtime, long localtime_epoch, String utc_offset) {
+			this.name = name;
+			this.country = country;
+			this.region = region;
+			this.lat = lat;
+			this.lon = lon;
+			this.timezone_id = timezone_id;
+			this.localtime = localtime;
+			this.localtime_epoch = localtime_epoch;
+			this.utc_offset = utc_offset;
+		}
 
 		// Getters and setters
 
@@ -225,6 +183,28 @@ public class WeatherDTO {
 		private int uv_index;
 		private int visibility;
 		private String is_day;
+
+		public CurrentDTO() {
+		}
+
+		public CurrentDTO(String observation_time, int temperature, int weather_code, List<String> weather_icons, List<String> weather_descriptions, int wind_speed, int wind_degree, String wind_dir, int pressure, int precip, int humidity, int cloudcover, int feelslike, int uv_index, int visibility, String is_day) {
+			this.observation_time = observation_time;
+			this.temperature = temperature;
+			this.weather_code = weather_code;
+			this.weather_icons = weather_icons;
+			this.weather_descriptions = weather_descriptions;
+			this.wind_speed = wind_speed;
+			this.wind_degree = wind_degree;
+			this.wind_dir = wind_dir;
+			this.pressure = pressure;
+			this.precip = precip;
+			this.humidity = humidity;
+			this.cloudcover = cloudcover;
+			this.feelslike = feelslike;
+			this.uv_index = uv_index;
+			this.visibility = visibility;
+			this.is_day = is_day;
+		}
 
 		public String getObservation_time() {
 
@@ -400,7 +380,7 @@ public class WeatherDTO {
 
 	@Override
 	public String toString() {
-		return "WeatherDTO [request=" + request + ", location=" + location + ", current=" + current + "]";
+		return "WeatherDTO [location=" + location + ", current=" + current + "]";
 	}
 
 }

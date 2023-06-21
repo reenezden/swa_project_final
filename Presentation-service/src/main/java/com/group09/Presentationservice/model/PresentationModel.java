@@ -8,16 +8,17 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.Date;
 
-@Document
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
+@Document
 public class PresentationModel {
     @Id
     private String region;
     private int temperature;
-    private int humudity;
-    private int windSpeed;
-    private String localTime;
+    private int humidity;
+    private int wind_speed;
+    private String localtime;
 
 }

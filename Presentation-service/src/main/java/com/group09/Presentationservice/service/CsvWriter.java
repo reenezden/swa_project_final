@@ -10,7 +10,7 @@ import java.io.IOException;
 @Component
 public class CsvWriter {
 
-    private static final String CSV_FILE_PATH = "C:\\Users\\615699\\Desktop\\WeatherData.CSV";
+    private static final String CSV_FILE_PATH = "C:\\Users\\615699\\Desktop\\WeatherData1.csv";
 
     public void writeToCsv(PresentationModel data){
         try (CSVWriter writer = new CSVWriter(new FileWriter(CSV_FILE_PATH, true))){
@@ -21,6 +21,8 @@ public class CsvWriter {
                     String.valueOf(data.getWind_speed()),
                     data.getLocaltime()
             };
+            writer.writeNext(values);
+            writer.flush();
         }catch (IOException e){
             e.printStackTrace();
         }

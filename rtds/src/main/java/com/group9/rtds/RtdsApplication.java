@@ -8,6 +8,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @SpringBootApplication
 @EnableKafka
 @EnableScheduling
+//@EnableDiscoveryClient
 public class RtdsApplication {
 
 	public static void main(String[] args) {

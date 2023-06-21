@@ -1,2 +1,2 @@
 eclipse.preferences.version=1
-spring.boot.launch.profile.history=jdrs1;rtds1;rtds2;
+spring.boot.launch.profile.history=jdrs2;jdrs1;rtds1;rtds2;

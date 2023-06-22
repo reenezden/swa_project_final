@@ -1,4 +1,4 @@
-package com.group09.Presentationservice;
+package com.group9.presentation;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

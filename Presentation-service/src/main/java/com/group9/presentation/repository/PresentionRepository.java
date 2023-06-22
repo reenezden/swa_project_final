@@ -1,7 +1,8 @@
-package com.group09.Presentationservice.Repository;
+package com.group9.presentation.repository;
 
-import com.group09.Presentationservice.model.PresentationModel;
 import org.springframework.data.mongodb.repository.MongoRepository;
+
+import com.group9.presentation.model.PresentationModel;
 
 public interface PresentionRepository extends MongoRepository<PresentationModel, String> {
 }

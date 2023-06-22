@@ -1,9 +1,8 @@
-package com.group09.Presentationservice.service;
+package com.group9.presentation.service;
 
 import java.util.List;
 
 public class WeatherDTO {
-
 
 	private LocationDTO location;
 	private CurrentDTO current;

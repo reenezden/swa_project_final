@@ -1,4 +1,4 @@
-package com.group09.Presentationservice.model;
+package com.group9.presentation.model;
 
 import java.util.List;
 

@@ -1,7 +1,8 @@
-package com.group09.Presentationservice.controller;
+package com.group9.presentation.controller;
 
-import com.group09.Presentationservice.Repository.PresentionRepository;
-import com.group09.Presentationservice.model.PresentationModel;
+import com.group9.presentation.model.PresentationModel;
+import com.group9.presentation.repository.PresentionRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
